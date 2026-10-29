@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NisShope</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    
+  <!-- comtainer cart/basket -->
+    <nav>
+        <div class="nav-container">
+              <a href="index.html">
+                <img src="./imgs/Logo.png"  class="Logonav">
+              </a>
+               
+              <div class="nav-profile">
+                <div onclick="openCart()" class="nav-profile-cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;">
+                      0
+                    </div>
+                </div>
+              </div>
+        </div>
+    </nav>
+
+
+
+<!--- container of sidebar-->
+    <div class="container">
+
+      <div class="sidebar" >
+
+        <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sidebar-search" placeholder="Search somthing...">
+
+        <a onclick="searhproduct('all')" class="sidebar-items">
+          All Products
+        </a>        
+        <a onclick="searhproduct('shoes')" class="sidebar-items">
+          Shoes
+        </a>
+        <a onclick="searhproduct('jecket')" class="sidebar-items">
+          Jecket
+        </a>
+        <a onclick="searhproduct('pants')" class="sidebar-items">
+          Pants
+        </a>
+         
+      </div>
+
+
+      <div id="productlist" class="product">
+       
+      </div>
+
+    </div>
+
+
+    <div id="modalDesc" class="madal" style="display: none;">
+      <div onclick="closeModal()"  class="madal-bg"></div>
+      <div class="madal-page">
+        <h2>Details</h2>
+        <br>
+        <div class="madaldesc-content">
+          <img id="mdd-img" class="madaldesc-img" src="https://assets.adidas.com/images/w_600,f_auto,q_auto/7bd1207382634a8c8e7a788f8d54db13_9366/Adizero_EVO_SL_Shoes_Woven_Yellow_JR2024_HM1.jpg">
+          <div class="madaldesc-detail">
+             <h id="mdd-name" style="font-size: 1.3vw;">Product Details</h>
+             <br>
+             <h id="mdd-price" style="font-size: 1vw;">5,800 THB</h> 
+             <h5 id="mdd-desc" style="color: #adadad;">
+              <br>
+              Regular fit<br>  
+              Lace closure<br>
+              Synthetic and textile upper<br>
+              Textile lining<br>
+              Forefoot Patch: Continental Rubber (Conti Winter)<br>
+              Color: Lucid Lemon/Core Black/Matte Silver<br>
+              <br>
+              Experience the feeling of fast in the Adizero Evo SL. Inspired by the innovation of record-breaking shoes in the Adizero running family - and specifically the Pro Evo 1 - the Evo SL is designed for you to run in it, or not. Combining Adizero technology with a bold and unique racing-inspired aesthetic, it's an evolution of speed in all aspects of life. A responsive layer of LIGHTSTRIKE PRO foam in the midsole provides comfort and cushioning for optimal energy return.
+              </h5>
+              <br>
+
+            <div class="btn-control">
+              <button onclick="closeModal()" class="btn btn-Close">
+                Close
+              </button>
+              <button onclick="addtocart()" class="btn btn-buy">
+                Add to cart
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="modalCart" class="madal" style="display: none;">
+      <div onclick="closeModal()"  class="madal-bg"></div>
+      <div class="madal-page">
+        <h2>Mycart</h2>
+        <br>
+        <div id="mycart" class="carlist">
+         
+
+      </div>
+        <div class="btn-control">
+          <button onclick="closeModal()"  class="btn">
+            Cancel
+          </button>
+          <button class="btn btn-buy">
+            Buy
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  
+
+ 
+
+
+
+</body>
+</html>
